@@ -16,10 +16,18 @@ export default class App extends React.Component {
         <Text style={styles.textBASE}>BASE Lorem ipsum dolor sizzle amizzle, you son of a bizzle adipiscing dawg.</Text>
         <Text style={styles.textSM}>SM Lorem ipsum dolor sizzle amizzle, you son of a bizzle adipiscing dawg.</Text>
         <Text style={styles.textXS}>XS Lorem ipsum dolor sizzle amizzle, you son of a bizzle adipiscing dawg.</Text>
-          <TouchableHighlight onPress={this._onPressButton} style={styles.button} underlayColor={'#00A85D'} activeOpacity={100}>
-            <Text style={styles.buttonText}>Press grapes</Text>
-          </TouchableHighlight>
+          <BpkButton label='Primary Button' onPress={this._onPressButton}/>
         </Image>
+    );
+  }
+}
+
+export class BpkButton extends Component {
+  render() {
+    return (
+          <TouchableHighlight style={styles.button} underlayColor={'#00A85D'} activeOpacity={100}>
+            <Text style={styles.buttonText}>{this.props.label}</Text>
+          </TouchableHighlight>
     );
   }
 }
